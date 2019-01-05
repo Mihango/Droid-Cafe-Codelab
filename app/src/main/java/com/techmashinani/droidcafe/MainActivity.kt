@@ -5,6 +5,8 @@ import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity;
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
+import android.widget.Toast
 
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -35,5 +37,21 @@ class MainActivity : AppCompatActivity() {
             R.id.action_settings -> true
             else -> super.onOptionsItemSelected(item)
         }
+    }
+
+    fun showDonutMessage(view: View) {
+        displayMessage(resources.getString(R.string.donut_order_message))
+    }
+
+    fun showOrderIcream(view: View) {
+        displayMessage(resources.getString(R.string.ice_cream_order_message))
+    }
+
+    fun orderFroyo(view: View) {
+        displayMessage(resources.getString(R.string.froyo_order_message))
+    }
+
+    fun displayMessage(message: String) {
+        Toast.makeText(this@MainActivity, message, Toast.LENGTH_LONG).show()
     }
 }
