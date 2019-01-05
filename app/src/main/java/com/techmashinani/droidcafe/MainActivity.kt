@@ -1,5 +1,6 @@
 package com.techmashinani.droidcafe
 
+import android.content.Intent
 import android.os.Bundle
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,14 +13,19 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
+    lateinit var mOrderMessage: String
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
 
         fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
+//            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                .setAction("Action", null).show()
+            val intent = Intent(this@MainActivity, OrderActivity::class.java)
+            intent.putExtra("message", mOrderMessage)
+            startActivity(intent)
         }
     }
 
@@ -40,15 +46,18 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun showDonutMessage(view: View) {
-        displayMessage(resources.getString(R.string.donut_order_message))
+        mOrderMessage = resources.getString(R.string.donut_order_message)
+        displayMessage(mOrderMessage)
     }
 
     fun showOrderIcream(view: View) {
-        displayMessage(resources.getString(R.string.ice_cream_order_message))
+        mOrderMessage = resources.getString(R.string.ice_cream_order_message)
+        displayMessage(mOrderMessage)
     }
 
     fun orderFroyo(view: View) {
-        displayMessage(resources.getString(R.string.froyo_order_message))
+        mOrderMessage = resources.getString(R.string.froyo_order_message)
+        displayMessage(mOrderMessage)
     }
 
     fun displayMessage(message: String) {
