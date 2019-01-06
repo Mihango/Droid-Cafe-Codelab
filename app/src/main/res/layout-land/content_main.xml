@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    app:layout_optimizationLevel="chains"
     tools:context=".MainActivity"
     tools:showIn="@layout/activity_main">
 
@@ -25,8 +25,9 @@
 
     <ImageView
         android:id="@+id/image_donut"
-        android:layout_width="wrap_content"
+        android:layout_width="233dp"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
         android:contentDescription="@string/donut_desc"
         android:onClick="showDonutMessage"
         app:layout_constraintEnd_toEndOf="parent"
@@ -37,7 +38,7 @@
 
     <ImageView
         android:id="@+id/image_icecream"
-        android:layout_width="wrap_content"
+        android:layout_width="233dp"
         android:layout_height="wrap_content"
         android:contentDescription="@string/ice_cream_desc"
         android:onClick="showOrderIcream"
@@ -49,8 +50,9 @@
 
     <ImageView
         android:id="@+id/image_froyo"
-        android:layout_width="wrap_content"
+        android:layout_width="233dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
         android:contentDescription="@string/froyo_desc"
         android:onClick="orderFroyo"
@@ -64,32 +66,41 @@
         android:id="@+id/textView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
         android:lines="2"
         android:linksClickable="true"
         android:text="@string/donut_desc"
         app:layout_constraintEnd_toEndOf="@+id/image_icecream"
         app:layout_constraintStart_toStartOf="@+id/image_icecream"
-        tools:layout_editor_absoluteY="235dp" />
+        app:layout_constraintTop_toBottomOf="@+id/image_icecream" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
         android:lines="2"
         android:maxLines="2"
         android:text="@string/ice_cream_desc"
         app:layout_constraintEnd_toEndOf="@+id/image_froyo"
         app:layout_constraintStart_toStartOf="@+id/image_froyo"
-        tools:layout_editor_absoluteY="235dp" />
+        app:layout_constraintTop_toBottomOf="@+id/image_froyo" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
         android:lines="2"
         android:text="@string/froyo_desc"
         app:layout_constraintEnd_toEndOf="@+id/image_donut"
         app:layout_constraintStart_toStartOf="@+id/image_donut"
-        tools:layout_editor_absoluteY="246dp" />
+        app:layout_constraintTop_toBottomOf="@+id/image_donut" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
