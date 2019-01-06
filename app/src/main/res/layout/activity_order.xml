@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".OrderActivity">
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                   xmlns:tools="http://schemas.android.com/tools"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="match_parent"
+                                                   tools:context=".OrderActivity">
 
 
     <TextView
-        android:id="@+id/text_message"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="@string/order_sample_text"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            android:id="@+id/text_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/order_sample_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
             android:id="@+id/text_name"
@@ -29,18 +29,17 @@
             app:layout_constraintTop_toBottomOf="@+id/text_message"/>
 
     <EditText
-        android:id="@+id/edit_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="24dp"
-        android:ems="10"
-        android:hint="@string/enter_name"
-        android:inputType="textPersonName"
-        app:layout_constraintStart_toEndOf="@+id/text_name"
-        app:layout_constraintBaseline_toBaselineOf="@+id/text_name"
-        tools:targetApi="o"
-        android:autofillHints="yes" />
+            android:id="@+id/edit_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="24dp"
+            android:hint="@string/enter_name"
+            android:inputType="textPersonName"
+            app:layout_constraintStart_toEndOf="@+id/text_name"
+            app:layout_constraintBaseline_toBaselineOf="@+id/text_name"
+            tools:targetApi="o"
+            android:autofillHints="yes"/>
 
     <TextView
             android:id="@+id/text_address"
@@ -57,7 +56,6 @@
             android:id="@+id/editText2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:ems="10"
             android:inputType="textMultiLine|textPostalAddress"
             android:hint="@string/enter_address"
             app:layout_constraintLeft_toRightOf="@+id/text_address"
@@ -77,15 +75,14 @@
 
     <EditText
             android:id="@+id/edit_phone"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:ems="10"
             android:hint="@string/enter_phone"
             android:inputType="phone"
             app:layout_constraintLeft_toRightOf="@+id/text_phone"
             app:layout_constraintBaseline_toBaselineOf="@id/text_phone"
             android:autofillHints="yes"
-            tools:targetApi="o" android:layout_marginStart="32dp"/>
+            tools:targetApi="o"/>
 
     <TextView
             android:id="@+id/text_notes"
@@ -112,29 +109,44 @@
             android:text="@string/delivery_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView4" android:layout_marginTop="24dp"
-            app:layout_constraintTop_toBottomOf="@+id/text_notes" app:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/textView4"
+            android:layout_marginTop="24dp"
+            app:layout_constraintTop_toBottomOf="@+id/text_notes"
+            app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="16dp"/>
     <RadioGroup
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/textView4" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="16dp" android:layout_marginTop="16dp">
+            app:layout_constraintTop_toBottomOf="@+id/textView4"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp">
         <RadioButton
                 android:text="@string/same_day"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" android:id="@+id/radio_same_day" android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:id="@+id/radio_same_day"
+                android:layout_weight="1"
                 android:onClick="onRadioButtonClicked"/>
         <RadioButton
                 android:text="@string/next_day"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" android:id="@+id/radio_next" android:layout_weight="1"
-                android:onClick="onRadioButtonClicked" android:checked="true"/>
+                android:layout_height="wrap_content"
+                android:id="@+id/radio_next"
+                android:layout_weight="1"
+                android:onClick="onRadioButtonClicked"
+                android:checked="true"/>
         <RadioButton
                 android:text="@string/pick_up"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" android:id="@+id/radio_pick" android:layout_weight="1"
                 android:onClick="onRadioButtonClicked"/>
     </RadioGroup>
+    <Spinner
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinner_phone" android:layout_marginEnd="8dp" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="24dp" app:layout_constraintTop_toBottomOf="@+id/text_address"
+            app:layout_constraintStart_toEndOf="@+id/edit_phone" android:layout_marginStart="16dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

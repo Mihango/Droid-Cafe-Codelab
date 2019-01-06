@@ -22,4 +22,10 @@
     <string name="same_day">Same day messenger service</string>
     <string name="next_day">Next day ground delivery</string>
     <string name="pick_up">Pick up</string>
+    <string-array name="phone_types">
+        <item>Home</item>
+        <item>Work</item>
+        <item>Mobile</item>
+        <item>Other</item>
+    </string-array>
 </resources>
