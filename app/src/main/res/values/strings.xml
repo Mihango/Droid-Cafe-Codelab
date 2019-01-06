@@ -9,4 +9,17 @@
     <string name="donut_order_message">You ordered a donut.</string>
     <string name="ice_cream_order_message">You ordered an ice cream sandwich.</string>
     <string name="froyo_order_message">You ordered a FroYo.</string>
+    <string name="order_sample_text">Order Sample Text</string>
+    <string name="name">Name</string>
+    <string name="enter_name">Enter Name</string>
+    <string name="address">Address</string>
+    <string name="enter_address">Enter Address</string>
+    <string name="phone">Phone</string>
+    <string name="enter_phone">Enter Phone</string>
+    <string name="notes">Notes</string>
+    <string name="enter_notes">Enter Notes</string>
+    <string name="delivery_text">Choose method of delivery</string>
+    <string name="same_day">Same day messenger service</string>
+    <string name="next_day">Next day ground delivery</string>
+    <string name="pick_up">Pick up</string>
 </resources>

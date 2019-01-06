@@ -13,7 +13,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var mOrderMessage: String
+    var mOrderMessage: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,11 +21,14 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
 
         fab.setOnClickListener {
-            //            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                .setAction("Action", null).show()
-            val intent = Intent(this@MainActivity, OrderActivity::class.java)
-            intent.putExtra("message", mOrderMessage)
-            startActivity(intent)
+            if(mOrderMessage.isNotEmpty()) {
+                val intent = Intent(this@MainActivity, OrderActivity::class.java)
+                intent.putExtra("message", mOrderMessage)
+                startActivity(intent)
+            } else {
+                Snackbar.make(it, "Kindly select dessert", Snackbar.LENGTH_LONG)
+                .setAction("Action", null).show()
+            }
         }
     }
 
