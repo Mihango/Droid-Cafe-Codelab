@@ -3,6 +3,7 @@ package com.techmashinani.droidcafe
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.RadioButton
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_order.*
 
@@ -17,6 +18,10 @@ class OrderActivity : AppCompatActivity() {
     }
 
     fun onRadioButtonClicked(view: View) {
-        Toast.makeText(this@OrderActivity, "Delivery clicked", Toast.LENGTH_LONG).show()
+        when(view.id) {
+            R.id.radio_same_day -> Toast.makeText(this@OrderActivity, (view as RadioButton).text, Toast.LENGTH_LONG).show()
+            R.id.radio_next -> Toast.makeText(this@OrderActivity, (view as RadioButton).text, Toast.LENGTH_LONG).show()
+            R.id.radio_pick -> Toast.makeText(this@OrderActivity, (view as RadioButton).text, Toast.LENGTH_LONG).show()
+        }
     }
 }
